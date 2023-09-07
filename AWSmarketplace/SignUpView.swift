@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import Amplify
 
     struct SignUpView: View {
-        // 1
+
         let showLogin: () -> Void
         
         @State var username: String = ""
-        // 2
         @State var email: String = ""
         @State var password: String = ""
         @State var shouldShowConfirmSignUp: Bool = false
@@ -23,13 +23,39 @@ import SwiftUI
                 TextField("Username", text: $username)
                 TextField("Email", text: $email)
                 SecureField("Password", text: $password)
-                Button("Sign Up", action: {})
+                Button("Sign Up", action: {
+                    Task{ await signUp() }
+                })
                 Spacer()
                 Button("Already have an account? Login.", action: showLogin)
             }
-            // 3
             .navigationDestination(isPresented: .constant(shouldShowConfirmSignUp)) {
                 ConfirmSignUp(username: username)
+            }
+        }
+        func signUp() async {
+
+            let options = AuthSignUpRequest.Options(
+                userAttributes: [.init(.email, value: email)]
+            )
+            do {
+
+                let result = try await Amplify.Auth.signUp(
+                    username: username,
+                    password: password,
+                    options: options
+                )
+                
+                switch result.nextStep {
+                case .confirmUser:
+                    DispatchQueue.main.async {
+                        self.shouldShowConfirmSignUp = true
+                    }
+                default:
+                    print(result)
+                }
+            } catch {
+                print(error)
             }
         }
     }
