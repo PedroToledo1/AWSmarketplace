@@ -6,12 +6,29 @@
 //
 
 import SwiftUI
+import Amplify
+import AWSCognitoAuthPlugin
 
 @main
 struct AWSmarketplaceApp: App {
+    init() {
+        configureAmplify()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
+    }
+}
+
+func configureAmplify() {
+    do {
+        try Amplify.add(plugin: AWSCognitoAuthPlugin())
+        try Amplify.configure()
+        
+        print("Successfully configured Amplify")
+        
+    } catch {
+        print("Failed to initialize Amplify", error)
     }
 }
