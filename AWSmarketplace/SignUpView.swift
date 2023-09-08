@@ -34,18 +34,15 @@ import Amplify
             }
         }
         func signUp() async {
-
             let options = AuthSignUpRequest.Options(
                 userAttributes: [.init(.email, value: email)]
             )
             do {
-
                 let result = try await Amplify.Auth.signUp(
                     username: username,
                     password: password,
                     options: options
                 )
-                
                 switch result.nextStep {
                 case .confirmUser:
                     DispatchQueue.main.async {

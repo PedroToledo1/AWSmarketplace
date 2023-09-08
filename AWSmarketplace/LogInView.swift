@@ -32,13 +32,12 @@ struct LoginView: View {
 
     func login() async {
         do {
-            // 1
+
             let result = try await Amplify.Auth.signIn(
                 username: username,
                 password: password
             )
             switch result.nextStep {
-            // 2
             case .done:
                 print("login is done")
             default:
