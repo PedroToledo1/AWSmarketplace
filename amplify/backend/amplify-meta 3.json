@@ -1,0 +1,108 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsmarketplace-staging-20129-authRole",
+      "UnauthRoleArn": "arn:aws:iam::844482867641:role/amplify-awsmarketplace-staging-20129-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::844482867641:role/amplify-awsmarketplace-staging-20129-authRole",
+      "Region": "sa-east-1",
+      "DeploymentBucketName": "amplify-awsmarketplace-staging-20129-deployment",
+      "UnauthRoleName": "amplify-awsmarketplace-staging-20129-unauthRole",
+      "StackName": "amplify-awsmarketplace-staging-20129",
+      "StackId": "arn:aws:cloudformation:sa-east-1:844482867641:stack/amplify-awsmarketplace-staging-20129/76121f30-4d22-11ee-b37d-02feaf62309a",
+      "AmplifyAppId": "d3ll1kddwk4fcv"
+    }
+  },
+  "api": {
+    "awsmarketplace": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "2dtjxiz4efgb3ai3jzyg6vt4ty",
+        "GraphQLAPIEndpointOutput": "https://mj7h4ysckvcpjmtxitfehgxgvu.appsync-api.sa-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-qvegzwi52ncvtfl7sntevcwyea"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2023-09-08T21:46:23.688Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsmarketplace-staging-20129-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiawsmarketplace"
+      }
+    }
+  },
+  "auth": {
+    "awsmarketplace": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "PREFERRED_USERNAME"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsmarketplace-staging-20129-deployment/amplify-cfn-templates/auth/awsmarketplace-cloudformation-template.json",
+        "logicalId": "authawsmarketplace"
+      },
+      "lastPushTimeStamp": "2023-09-08T21:46:23.690Z",
+      "output": {
+        "UserPoolId": "sa-east-1_EJ1wMWit9",
+        "AppClientIDWeb": "2ggtg77435h306htslq19fgst",
+        "AppClientID": "3jsi6gm3a69aqpnblu1uhlr8pa",
+        "IdentityPoolId": "sa-east-1:2afd4f26-9ec9-480f-b188-84af71e153f2",
+        "UserPoolArn": "arn:aws:cognito-idp:sa-east-1:844482867641:userpool/sa-east-1_EJ1wMWit9",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "awsmarketplace"
+      },
+      "lastPushDirHash": "3tHcxjyvvQvZsglb1G9+qn00q8c="
+    }
+  },
+  "storage": {
+    "s3awsmarketplacestorage7c08369f": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "output": {
+        "BucketName": "awsmarketplace-storage-7c08369f20129-staging",
+        "Region": "sa-east-1"
+      },
+      "lastPushTimeStamp": "2023-09-08T21:46:26.373Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsmarketplace-staging-20129-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages3awsmarketplacestorage7c08369f"
+      }
+    }
+  }
+}

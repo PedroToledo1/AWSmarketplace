@@ -80,5 +80,5 @@ struct Sessionview: View {
             })
             .store(in: &tokens)
     }
-    }
+}
 

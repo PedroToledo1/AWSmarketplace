@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3awsmarketplacestorage7c08369f",
+  "bucketName": "awsmarketplace-storage-7c08369f",
+  "policyUUID": "67c1048c",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
