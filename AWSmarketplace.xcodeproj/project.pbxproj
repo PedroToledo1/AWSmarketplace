@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		39F18AA67E51A9AF7FE06842 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B2CEC9D7EE7A6E1188724 /* User.swift */; };
+		4A1241192AAB64C500EEDCEF /* AmplifyImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A1241182AAB64C500EEDCEF /* AmplifyImage */; };
+		4A12411B2AAB650F00EEDCEF /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12411A2AAB650F00EEDCEF /* AvatarView.swift */; };
+		4A12411D2AAB690400EEDCEF /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12411C2AAB690400EEDCEF /* UserProfileView.swift */; };
+		4A12411F2AAB6D8400EEDCEF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12411E2AAB6D8400EEDCEF /* MainTabView.swift */; };
 		4A5C84632AA963700012F541 /* AWSmarketplaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84622AA963700012F541 /* AWSmarketplaceApp.swift */; };
 		4A5C84652AA963700012F541 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84642AA963700012F541 /* ContentView.swift */; };
 		4A5C84672AA963710012F541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5C84662AA963710012F541 /* Assets.xcassets */; };
@@ -30,6 +34,9 @@
 /* Begin PBXFileReference section */
 		04572568E4ED3FDC519030BD /* User+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "User+Schema.swift"; path = "amplify/generated/models/User+Schema.swift"; sourceTree = "<group>"; };
 		061B2CEC9D7EE7A6E1188724 /* User.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = User.swift; path = amplify/generated/models/User.swift; sourceTree = "<group>"; };
+		4A12411A2AAB650F00EEDCEF /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		4A12411C2AAB690400EEDCEF /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		4A12411E2AAB6D8400EEDCEF /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4A5C845F2AA963700012F541 /* AWSmarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AWSmarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5C84622AA963700012F541 /* AWSmarketplaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSmarketplaceApp.swift; sourceTree = "<group>"; };
 		4A5C84642AA963700012F541 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AF57E1D2AAACBC4004CF0F3 /* AWSDataStorePlugin in Frameworks */,
+				4A1241192AAB64C500EEDCEF /* AmplifyImage in Frameworks */,
 				4A5C84722AA968D60012F541 /* AWSCognitoAuthPlugin in Frameworks */,
 				4A5C84742AA968D60012F541 /* Amplify in Frameworks */,
 			);
@@ -99,6 +107,9 @@
 				4AF57E1E2AAACC78004CF0F3 /* UserState.swift */,
 				4AF57E202AAACCBC004CF0F3 /* MarketplaceError.swift */,
 				4AF57E222AAACD28004CF0F3 /* Sessionview.swift */,
+				4A12411A2AAB650F00EEDCEF /* AvatarView.swift */,
+				4A12411C2AAB690400EEDCEF /* UserProfileView.swift */,
+				4A12411E2AAB6D8400EEDCEF /* MainTabView.swift */,
 				4A5C84662AA963710012F541 /* Assets.xcassets */,
 				4A5C84682AA963710012F541 /* Preview Content */,
 			);
@@ -150,6 +161,7 @@
 				4A5C84712AA968D60012F541 /* AWSCognitoAuthPlugin */,
 				4A5C84732AA968D60012F541 /* Amplify */,
 				4AF57E1C2AAACBC4004CF0F3 /* AWSDataStorePlugin */,
+				4A1241182AAB64C500EEDCEF /* AmplifyImage */,
 			);
 			productName = AWSmarketplace;
 			productReference = 4A5C845F2AA963700012F541 /* AWSmarketplace.app */;
@@ -181,6 +193,7 @@
 			mainGroup = 4A5C84562AA963700012F541;
 			packageReferences = (
 				4A5C84702AA968D60012F541 /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				4A1241172AAB64C500EEDCEF /* XCRemoteSwiftPackageReference "amplifyimage" */,
 			);
 			productRefGroup = 4A5C84602AA963700012F541 /* Products */;
 			projectDirPath = "";
@@ -211,14 +224,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AF57E1F2AAACC78004CF0F3 /* UserState.swift in Sources */,
+				4A12411B2AAB650F00EEDCEF /* AvatarView.swift in Sources */,
 				4A5C847A2AA96AB20012F541 /* ConfirmNewSignUp.swift in Sources */,
 				4A5C84782AA96A1F0012F541 /* SignUpView.swift in Sources */,
 				4A5C84762AA96A090012F541 /* LogInView.swift in Sources */,
+				4A12411D2AAB690400EEDCEF /* UserProfileView.swift in Sources */,
 				4AF57E232AAACD28004CF0F3 /* Sessionview.swift in Sources */,
 				4AF57E212AAACCBC004CF0F3 /* MarketplaceError.swift in Sources */,
 				4A5C84652AA963700012F541 /* ContentView.swift in Sources */,
 				4A5C84632AA963700012F541 /* AWSmarketplaceApp.swift in Sources */,
 				6054CB964E16A8C8F3DA9B8B /* AmplifyModels.swift in Sources */,
+				4A12411F2AAB6D8400EEDCEF /* MainTabView.swift in Sources */,
 				A61DCEDD53DD8CC34CBCE46A /* User+Schema.swift in Sources */,
 				39F18AA67E51A9AF7FE06842 /* User.swift in Sources */,
 			);
@@ -423,6 +439,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A1241172AAB64C500EEDCEF /* XCRemoteSwiftPackageReference "amplifyimage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kilo-loco/amplifyimage";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		4A5C84702AA968D60012F541 /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
@@ -434,6 +458,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A1241182AAB64C500EEDCEF /* AmplifyImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A1241172AAB64C500EEDCEF /* XCRemoteSwiftPackageReference "amplifyimage" */;
+			productName = AmplifyImage;
+		};
 		4A5C84712AA968D60012F541 /* AWSCognitoAuthPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4A5C84702AA968D60012F541 /* XCRemoteSwiftPackageReference "amplify-ios" */;

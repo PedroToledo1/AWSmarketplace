@@ -28,7 +28,7 @@ struct Sessionview: View {
     @ViewBuilder
     func StartingView() -> some View {
         if isSignedIn {
-            Text("Signed In")
+            MainTabView()
         }else {
             LoginView()
         }
