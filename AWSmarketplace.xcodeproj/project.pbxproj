@@ -20,6 +20,7 @@
 		4AF57E1D2AAACBC4004CF0F3 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF57E1C2AAACBC4004CF0F3 /* AWSDataStorePlugin */; };
 		4AF57E1F2AAACC78004CF0F3 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57E1E2AAACC78004CF0F3 /* UserState.swift */; };
 		4AF57E212AAACCBC004CF0F3 /* MarketplaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57E202AAACCBC004CF0F3 /* MarketplaceError.swift */; };
+		4AF57E232AAACD28004CF0F3 /* Sessionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57E222AAACD28004CF0F3 /* Sessionview.swift */; };
 		6054CB964E16A8C8F3DA9B8B /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735986E3DD6C7C8BD87EADB /* AmplifyModels.swift */; };
 		9435899CC6DF3DC53800EB3B /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 83EA95FD60E4B6C2C46D47BE /* amplifyconfiguration.json */; };
 		A61DCEDD53DD8CC34CBCE46A /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04572568E4ED3FDC519030BD /* User+Schema.swift */; };
@@ -39,6 +40,7 @@
 		4A5C84792AA96AB20012F541 /* ConfirmNewSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNewSignUp.swift; sourceTree = "<group>"; };
 		4AF57E1E2AAACC78004CF0F3 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		4AF57E202AAACCBC004CF0F3 /* MarketplaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceError.swift; sourceTree = "<group>"; };
+		4AF57E222AAACD28004CF0F3 /* Sessionview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessionview.swift; sourceTree = "<group>"; };
 		83EA95FD60E4B6C2C46D47BE /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		E735986E3DD6C7C8BD87EADB /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		F4055DFBAD76F5217CDA2B3D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				4A5C84792AA96AB20012F541 /* ConfirmNewSignUp.swift */,
 				4AF57E1E2AAACC78004CF0F3 /* UserState.swift */,
 				4AF57E202AAACCBC004CF0F3 /* MarketplaceError.swift */,
+				4AF57E222AAACD28004CF0F3 /* Sessionview.swift */,
 				4A5C84662AA963710012F541 /* Assets.xcassets */,
 				4A5C84682AA963710012F541 /* Preview Content */,
 			);
@@ -211,6 +214,7 @@
 				4A5C847A2AA96AB20012F541 /* ConfirmNewSignUp.swift in Sources */,
 				4A5C84782AA96A1F0012F541 /* SignUpView.swift in Sources */,
 				4A5C84762AA96A090012F541 /* LogInView.swift in Sources */,
+				4AF57E232AAACD28004CF0F3 /* Sessionview.swift in Sources */,
 				4AF57E212AAACCBC004CF0F3 /* MarketplaceError.swift in Sources */,
 				4A5C84652AA963700012F541 /* ContentView.swift in Sources */,
 				4A5C84632AA963700012F541 /* AWSmarketplaceApp.swift in Sources */,
