@@ -17,7 +17,7 @@ struct AWSmarketplaceApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            Sessionview()
         }
     }
 }

@@ -17,6 +17,12 @@ struct Sessionview: View {
     var body: some View {
         StartingView()
             .environmentObject(userState)
+            .onAppear{
+                Task{
+                    await getCurrentSession()
+                }
+                observeSession()
+            }
     }
     
     @ViewBuilder
