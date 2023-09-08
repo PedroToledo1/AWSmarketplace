@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Amplify
+
 struct UserProfileView: View {
     @EnvironmentObject var userState: UserState
     let columns = Array(repeating: GridItem(.flexible(minimum: 150)), count: 2)
@@ -34,11 +36,24 @@ struct UserProfileView: View {
             .toolbar {
                 ToolbarItem {
                     Button(
-                        action: {},
+                        action: {
+                            Task {
+                                await signOut()
+                            }
+                        },
                         label: { Image(systemName: "rectangle.portrait.and.arrow.right") }
                     )
                 }
             }
         }
     }
+    func signOut() async {
+        do {  _ = await Amplify.Auth.signOut()
+            print("signed out")
+            _ = try await Amplify.DataStore.clear()
+        } catch {
+            print("error")
+        }
+    }
 }
+ 
