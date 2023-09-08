@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "awsmarketplace": {}
+      },
+      "storage": {
+        "s3awsmarketplacestorage7c08369f": {}
       }
     }
   }
