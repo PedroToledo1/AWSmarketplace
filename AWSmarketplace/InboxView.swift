@@ -36,6 +36,12 @@ struct InboxView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Inbox")
+            .navigationDestination(for: ChatRoute.self) { route in
+                switch route {
+                case .chatRoom(let chatRoom, let user):
+                    MessagesView(chatRoom: chatRoom, otherUser: user)
+                }
+            }
         }
     }
 }
