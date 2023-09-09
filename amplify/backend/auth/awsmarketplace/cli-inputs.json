@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "awsmare80cb25e",
+    "resourceNameTruncated": "awsmarfafaff59",
     "userPoolName": "awsmarketplace",
     "autoVerifiedAttributes": [
       "email"
@@ -24,17 +24,15 @@
       "Requires Symbols",
       "Requires Uppercase"
     ],
-    "requiredAttributes": [
-      "preferred_username"
-    ],
+    "requiredAttributes": [],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "awsmare80cb25e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "awsmarfafaff59_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "e80cb25e",
+    "sharedId": "fafaff59",
     "resourceName": "awsmarketplace",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",

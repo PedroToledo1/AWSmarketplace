@@ -1,27 +1,4 @@
 {
-  "api": {
-    "awsmarketplace": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "api key description"
-            },
-            "authenticationType": "API_KEY"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    }
-  },
   "auth": {
     "awsmarketplace": {
       "customAuth": false,
@@ -40,9 +17,7 @@
           ],
           "passwordPolicyMinLength": 8
         },
-        "signupAttributes": [
-          "PREFERRED_USERNAME"
-        ],
+        "signupAttributes": [],
         "socialProviders": [],
         "usernameAttributes": [],
         "verificationMechanisms": [
@@ -51,13 +26,6 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    }
-  },
-  "storage": {
-    "s3awsmarketplacestorage7c08369f": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3"
     }
   }
 }
