@@ -23,19 +23,24 @@
 		4A5C84762AA96A090012F541 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84752AA96A090012F541 /* LogInView.swift */; };
 		4A5C84782AA96A1F0012F541 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84772AA96A1F0012F541 /* SignUpView.swift */; };
 		4A5C847A2AA96AB20012F541 /* ConfirmNewSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84792AA96AB20012F541 /* ConfirmNewSignUp.swift */; };
+		4AB53D142AACEB7D005D3DCE /* ProductGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB53D132AACEB7D005D3DCE /* ProductGridCell.swift */; };
+		4AB53D162AACEC33005D3DCE /* Product+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB53D152AACEC33005D3DCE /* Product+Extensions.swift */; };
 		4AF57E1D2AAACBC4004CF0F3 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF57E1C2AAACBC4004CF0F3 /* AWSDataStorePlugin */; };
 		4AF57E1F2AAACC78004CF0F3 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57E1E2AAACC78004CF0F3 /* UserState.swift */; };
 		4AF57E212AAACCBC004CF0F3 /* MarketplaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57E202AAACCBC004CF0F3 /* MarketplaceError.swift */; };
 		4AF57E232AAACD28004CF0F3 /* Sessionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57E222AAACD28004CF0F3 /* Sessionview.swift */; };
 		6054CB964E16A8C8F3DA9B8B /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735986E3DD6C7C8BD87EADB /* AmplifyModels.swift */; };
+		6437FA9DEF82FB2C59B177A4 /* Product+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401E265F76B62B6BF486E7D /* Product+Schema.swift */; };
 		9435899CC6DF3DC53800EB3B /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 83EA95FD60E4B6C2C46D47BE /* amplifyconfiguration.json */; };
 		A61DCEDD53DD8CC34CBCE46A /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04572568E4ED3FDC519030BD /* User+Schema.swift */; };
 		C55372935485ECC43F234BE3 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = F4055DFBAD76F5217CDA2B3D /* awsconfiguration.json */; };
+		D81D5E30C0392EC190E3A8E9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1067E8B371220F4F4F3ABC0 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04572568E4ED3FDC519030BD /* User+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "User+Schema.swift"; path = "amplify/generated/models/User+Schema.swift"; sourceTree = "<group>"; };
 		061B2CEC9D7EE7A6E1188724 /* User.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = User.swift; path = amplify/generated/models/User.swift; sourceTree = "<group>"; };
+		2401E265F76B62B6BF486E7D /* Product+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Product+Schema.swift"; path = "amplify/generated/models/Product+Schema.swift"; sourceTree = "<group>"; };
 		4A00F0022AAC2E9100C81A26 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		4A12411A2AAB650F00EEDCEF /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		4A12411C2AAB690400EEDCEF /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
@@ -48,10 +53,13 @@
 		4A5C84752AA96A090012F541 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		4A5C84772AA96A1F0012F541 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4A5C84792AA96AB20012F541 /* ConfirmNewSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNewSignUp.swift; sourceTree = "<group>"; };
+		4AB53D132AACEB7D005D3DCE /* ProductGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCell.swift; sourceTree = "<group>"; };
+		4AB53D152AACEC33005D3DCE /* Product+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Extensions.swift"; sourceTree = "<group>"; };
 		4AF57E1E2AAACC78004CF0F3 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		4AF57E202AAACCBC004CF0F3 /* MarketplaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceError.swift; sourceTree = "<group>"; };
 		4AF57E222AAACD28004CF0F3 /* Sessionview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessionview.swift; sourceTree = "<group>"; };
 		83EA95FD60E4B6C2C46D47BE /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		D1067E8B371220F4F4F3ABC0 /* Product.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Product.swift; path = amplify/generated/models/Product.swift; sourceTree = "<group>"; };
 		E735986E3DD6C7C8BD87EADB /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		F4055DFBAD76F5217CDA2B3D /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +123,8 @@
 				4A12411C2AAB690400EEDCEF /* UserProfileView.swift */,
 				4A12411E2AAB6D8400EEDCEF /* MainTabView.swift */,
 				4A00F0022AAC2E9100C81A26 /* ImagePickerView.swift */,
+				4AB53D132AACEB7D005D3DCE /* ProductGridCell.swift */,
+				4AB53D152AACEC33005D3DCE /* Product+Extensions.swift */,
 				4A5C84662AA963710012F541 /* Assets.xcassets */,
 				4A5C84682AA963710012F541 /* Preview Content */,
 			);
@@ -142,6 +152,8 @@
 				E735986E3DD6C7C8BD87EADB /* AmplifyModels.swift */,
 				04572568E4ED3FDC519030BD /* User+Schema.swift */,
 				061B2CEC9D7EE7A6E1188724 /* User.swift */,
+				2401E265F76B62B6BF486E7D /* Product+Schema.swift */,
+				D1067E8B371220F4F4F3ABC0 /* Product.swift */,
 			);
 			name = AmplifyModels;
 			sourceTree = "<group>";
@@ -242,8 +254,12 @@
 				6054CB964E16A8C8F3DA9B8B /* AmplifyModels.swift in Sources */,
 				4A12411F2AAB6D8400EEDCEF /* MainTabView.swift in Sources */,
 				4A00F0032AAC2E9100C81A26 /* ImagePickerView.swift in Sources */,
+				4AB53D142AACEB7D005D3DCE /* ProductGridCell.swift in Sources */,
+				4AB53D162AACEC33005D3DCE /* Product+Extensions.swift in Sources */,
 				A61DCEDD53DD8CC34CBCE46A /* User+Schema.swift in Sources */,
 				39F18AA67E51A9AF7FE06842 /* User.swift in Sources */,
+				6437FA9DEF82FB2C59B177A4 /* Product+Schema.swift in Sources */,
+				D81D5E30C0392EC190E3A8E9 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
