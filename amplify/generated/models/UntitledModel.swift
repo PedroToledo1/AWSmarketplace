@@ -2,7 +2,7 @@
 import Amplify
 import Foundation
 
-public struct User: Model {
+public struct UntitledModel: Model {
   public let id: String
   public var username: String
   public var createdAt: Temporal.DateTime?

@@ -1,6 +1,6 @@
 {
   "api": {
-    "awsmarketplace": {
+    "Test": {
       "dependsOn": [],
       "output": {
         "authConfig": {
@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "awsmarketplace": {
+    "Test": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -52,11 +52,10 @@
     }
   },
   "storage": {
-    "awsmarketplace21081fd4": {
+    "s3teststoragef84bd6a0": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "S3",
-      "serviceType": "imported"
+      "service": "S3"
     }
   }
 }

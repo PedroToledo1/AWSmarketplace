@@ -2,7 +2,7 @@
 import Amplify
 import Foundation
 
-extension User {
+extension UntitledModel {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
@@ -15,29 +15,29 @@ extension User {
   //  MARK: - ModelSchema 
   
   public static let schema = defineSchema { model in
-    let user = User.keys
+    let untitledModel = UntitledModel.keys
     
     model.authRules = [
       rule(allow: .public, operations: [.create, .update, .delete, .read])
     ]
     
-    model.listPluralName = "Users"
-    model.syncPluralName = "Users"
+    model.listPluralName = "UntitledModels"
+    model.syncPluralName = "UntitledModels"
     
     model.attributes(
-      .primaryKey(fields: [user.id])
+      .primaryKey(fields: [untitledModel.id])
     )
     
     model.fields(
-      .field(user.id, is: .required, ofType: .string),
-      .field(user.username, is: .required, ofType: .string),
-      .field(user.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
-      .field(user.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
+      .field(untitledModel.id, is: .required, ofType: .string),
+      .field(untitledModel.username, is: .required, ofType: .string),
+      .field(untitledModel.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
+      .field(untitledModel.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )
     }
 }
 
-extension User: ModelIdentifiable {
+extension UntitledModel: ModelIdentifiable {
   public typealias IdentifierFormat = ModelIdentifierFormat.Default
   public typealias IdentifierProtocol = DefaultModelIdentifier<Self>
 }
