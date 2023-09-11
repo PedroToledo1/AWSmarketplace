@@ -2,10 +2,12 @@
 //  User+Extensions.swift
 //  AWSmarketplace
 //
-//  Created by Pedro Toledo on 9/9/23.
+//  Created by Pedro Toledo on 10/9/23.
 //
 
+import SwiftUI
 import Foundation
+
 extension User: Hashable {
     public static func == (lhs: User, rhs: User) -> Bool {
         lhs.id == rhs.id &&

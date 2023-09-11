@@ -6,8 +6,7 @@ public struct Message: Model {
   public let id: String
   public var body: String
   public var dateTime: Temporal.DateTime
-  public var sender: User?
-  public var chatroomID: String
+  public var Sender: User?
   public var createdAt: Temporal.DateTime?
   public var updatedAt: Temporal.DateTime?
   public var messageSenderId: String?
@@ -15,14 +14,12 @@ public struct Message: Model {
   public init(id: String = UUID().uuidString,
       body: String,
       dateTime: Temporal.DateTime,
-      sender: User? = nil,
-      chatroomID: String,
+      Sender: User? = nil,
       messageSenderId: String? = nil) {
     self.init(id: id,
       body: body,
       dateTime: dateTime,
-      sender: sender,
-      chatroomID: chatroomID,
+      Sender: Sender,
       createdAt: nil,
       updatedAt: nil,
       messageSenderId: messageSenderId)
@@ -30,16 +27,14 @@ public struct Message: Model {
   internal init(id: String = UUID().uuidString,
       body: String,
       dateTime: Temporal.DateTime,
-      sender: User? = nil,
-      chatroomID: String,
+      Sender: User? = nil,
       createdAt: Temporal.DateTime? = nil,
       updatedAt: Temporal.DateTime? = nil,
       messageSenderId: String? = nil) {
       self.id = id
       self.body = body
       self.dateTime = dateTime
-      self.sender = sender
-      self.chatroomID = chatroomID
+      self.Sender = Sender
       self.createdAt = createdAt
       self.updatedAt = updatedAt
       self.messageSenderId = messageSenderId

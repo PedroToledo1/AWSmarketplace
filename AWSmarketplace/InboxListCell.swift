@@ -2,14 +2,17 @@
 //  InboxListCell.swift
 //  AWSmarketplace
 //
-//  Created by Pedro Toledo on 9/9/23.
+//  Created by Pedro Toledo on 10/9/23.
 //
 
 import AmplifyImage
 import SwiftUI
 struct InboxListCell: View {
+    // 1
     let otherChatRoomMember: User
     let lastMessage: LastMessage
+    
+    // 2
     var otherUsersAvatarKey: String {
         otherChatRoomMember.id + ".jpg"
     }
@@ -26,6 +29,7 @@ struct InboxListCell: View {
     }
     
     var body: some View {
+        // 3
         HStack {
             AvatarView(state: .remote(avatarKey: otherUsersAvatarKey))
                 .frame(width: 50, height: 50)

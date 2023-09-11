@@ -11,6 +11,7 @@ extension ChatRoom {
     case Messages
     case createdAt
     case updatedAt
+    case chatRoomMessagesId
   }
   
   public static let keys = CodingKeys.self
@@ -34,9 +35,10 @@ extension ChatRoom {
       .field(chatRoom.id, is: .required, ofType: .string),
       .field(chatRoom.memberIds, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .field(chatRoom.lastMessage, is: .optional, ofType: .embedded(type: LastMessage.self)),
-      .hasMany(chatRoom.Messages, is: .optional, ofType: Message.self, associatedWith: Message.keys.chatroomID),
+      .hasOne(chatRoom.Messages, is: .optional, ofType: Message.self, associatedWith: Message.keys.id, targetNames: ["chatRoomMessagesId"]),
       .field(chatRoom.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
-      .field(chatRoom.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
+      .field(chatRoom.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime),
+      .field(chatRoom.chatRoomMessagesId, is: .optional, ofType: .string)
     )
     }
 }
@@ -44,24 +46,4 @@ extension ChatRoom {
 extension ChatRoom: ModelIdentifiable {
   public typealias IdentifierFormat = ModelIdentifierFormat.Default
   public typealias IdentifierProtocol = DefaultModelIdentifier<Self>
-}
-extension ChatRoom: Identifiable {}
-extension ChatRoom: Hashable {
-    public static func == (lhs: ChatRoom, rhs: ChatRoom) -> Bool {
-        lhs.id == rhs.id &&
-        lhs.memberIds == rhs.memberIds
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(memberIds)
-    }
-}
-extension ChatRoom {
-    func otherMemberId(currentUser id: String) -> String {
-        let otherMemberId = self.memberIds?.first {
-            $0 != id
-        }
-        return otherMemberId ?? ""
-    }
 }

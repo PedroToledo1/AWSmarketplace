@@ -2,15 +2,18 @@
 //  InboxView.swift
 //  AWSmarketplace
 //
-//  Created by Pedro Toledo on 9/9/23.
+//  Created by Pedro Toledo on 10/9/23.
 //
 
 import SwiftUI
 struct InboxView: View {
     @EnvironmentObject var userState: UserState
+    // 1
     @State var chatRooms: [ChatRoom] = []
+    // 2
     @State var users: [User] = []
     
+    // 3
     var chatRoomAndMemberList: [(chatRoom: ChatRoom, user: User)] {
         let pairs = chatRooms.compactMap { chatRoom -> (ChatRoom, User)? in
             let otherUserId = chatRoom.otherMemberId(
@@ -24,9 +27,12 @@ struct InboxView: View {
     
     var body: some View {
         NavigationStack {
+            // 4
             List(chatRoomAndMemberList, id: \.0.id) { pair in
+                // 5
                 NavigationLink(value: ChatRoute.chatRoom(pair.chatRoom, pair.user)) {
                     if let lastMessage = pair.chatRoom.lastMessage {
+                        // 6
                         InboxListCell(
                             otherChatRoomMember: pair.user,
                             lastMessage: lastMessage

@@ -8,8 +8,7 @@ extension Message {
     case id
     case body
     case dateTime
-    case sender
-    case chatroomID
+    case Sender
     case createdAt
     case updatedAt
     case messageSenderId
@@ -29,7 +28,6 @@ extension Message {
     model.syncPluralName = "Messages"
     
     model.attributes(
-      .index(fields: ["chatroomID"], name: "byChatRoom"),
       .primaryKey(fields: [message.id])
     )
     
@@ -37,8 +35,7 @@ extension Message {
       .field(message.id, is: .required, ofType: .string),
       .field(message.body, is: .required, ofType: .string),
       .field(message.dateTime, is: .required, ofType: .dateTime),
-      .hasOne(message.sender, is: .optional, ofType: User.self, associatedWith: User.keys.id, targetNames: ["messageSenderId"]),
-      .field(message.chatroomID, is: .required, ofType: .string),
+      .hasOne(message.Sender, is: .optional, ofType: User.self, associatedWith: User.keys.id, targetNames: ["messageSenderId"]),
       .field(message.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(message.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(message.messageSenderId, is: .optional, ofType: .string)
