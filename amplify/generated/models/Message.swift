@@ -7,6 +7,7 @@ public struct Message: Model {
   public var body: String
   public var dateTime: Temporal.DateTime
   public var Sender: User?
+  public var chatroomID: String
   public var createdAt: Temporal.DateTime?
   public var updatedAt: Temporal.DateTime?
   public var messageSenderId: String?
@@ -15,11 +16,13 @@ public struct Message: Model {
       body: String,
       dateTime: Temporal.DateTime,
       Sender: User? = nil,
+      chatroomID: String,
       messageSenderId: String? = nil) {
     self.init(id: id,
       body: body,
       dateTime: dateTime,
       Sender: Sender,
+      chatroomID: chatroomID,
       createdAt: nil,
       updatedAt: nil,
       messageSenderId: messageSenderId)
@@ -28,6 +31,7 @@ public struct Message: Model {
       body: String,
       dateTime: Temporal.DateTime,
       Sender: User? = nil,
+      chatroomID: String,
       createdAt: Temporal.DateTime? = nil,
       updatedAt: Temporal.DateTime? = nil,
       messageSenderId: String? = nil) {
@@ -35,6 +39,7 @@ public struct Message: Model {
       self.body = body
       self.dateTime = dateTime
       self.Sender = Sender
+      self.chatroomID = chatroomID
       self.createdAt = createdAt
       self.updatedAt = updatedAt
       self.messageSenderId = messageSenderId

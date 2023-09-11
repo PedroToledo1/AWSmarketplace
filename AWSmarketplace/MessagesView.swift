@@ -4,12 +4,15 @@
 //
 //  Created by Pedro Toledo on 10/9/23.
 //
-
+import Amplify
+import Combine
 import SwiftUI
+
 struct MessagesView: View {
     @EnvironmentObject var userState: UserState
     @State var messages: [Message] = []
     @State var messageBody: String = ""
+    @State var tokens: Set<AnyCancellable> = []
     let chatRoom: ChatRoom
     let otherUser: User
     let productId: String?
@@ -34,12 +37,56 @@ struct MessagesView: View {
             
             HStack {
                 TextField("Message", text: $messageBody)
-                Button("Send", action: {})
+                Button("Send", action: {Task { await sendMessage() }})
             }
             .padding()
         }
         .navigationTitle(otherUser.username)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear(perform: getMessages)
+    }
+    func getMessages() {
+        Amplify.Publisher.create(
+            Amplify.DataStore.observeQuery(
+                for: Message.self,
+                where: Message.keys.chatroomID == chatRoom.id
+            )
+        )
+        .map(\.items)
+        .receive(on: DispatchQueue.main)
+        .sink(
+            receiveCompletion: { print($0) },
+            receiveValue: {
+                self.messages = $0.sorted(by: { $0.dateTime > $1.dateTime })
+            }
+        )
+        .store(in: &tokens)
+    }
+    func sendMessage() async {
+        do {
+            let message = Message(
+                body: messageBody,
+                dateTime: .now(),
+                Sender: User(
+                    id: userState.userId,
+                    username: userState.username
+                ),
+                chatroomID: chatRoom.id,
+                messageSenderId: userState.userId
+            )
+            try await Amplify.DataStore.save(message)
+            let lastMessage = LastMessage(
+                body: messageBody,
+                dateTime: .now(),
+                productId: productId ?? ""
+            )
+            var updatedChatRoom = chatRoom
+            updatedChatRoom.lastMessage = lastMessage
+            try await Amplify.DataStore.save(updatedChatRoom)
+            messageBody.removeAll()
+        } catch {
+            print(error)
+        }
     }
 }
 extension View {

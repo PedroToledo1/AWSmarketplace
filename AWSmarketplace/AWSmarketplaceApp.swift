@@ -10,6 +10,7 @@ import Amplify
 import AWSCognitoAuthPlugin
 import AWSDataStorePlugin
 import AWSS3StoragePlugin
+import AWSAPIPlugin
 
 @main
 struct AWSmarketplaceApp: App {
@@ -29,6 +30,7 @@ func configureAmplify() {
         let models = AmplifyModels()
         try Amplify.add(plugin: AWSDataStorePlugin(modelRegistration: models))
         try Amplify.add(plugin: AWSS3StoragePlugin())
+        try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: models))
         try Amplify.configure()
         
         print("Successfully configured Amplify")

@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import Combine
+import Amplify
+
 struct InboxView: View {
     @EnvironmentObject var userState: UserState
-    // 1
     @State var chatRooms: [ChatRoom] = []
-    // 2
     @State var users: [User] = []
-    
-    // 3
+    @State var tokens: Set<AnyCancellable> = []
+
     var chatRoomAndMemberList: [(chatRoom: ChatRoom, user: User)] {
         let pairs = chatRooms.compactMap { chatRoom -> (ChatRoom, User)? in
             let otherUserId = chatRoom.otherMemberId(
@@ -27,12 +28,9 @@ struct InboxView: View {
     
     var body: some View {
         NavigationStack {
-            // 4
             List(chatRoomAndMemberList, id: \.0.id) { pair in
-                // 5
                 NavigationLink(value: ChatRoute.chatRoom(pair.chatRoom, pair.user)) {
                     if let lastMessage = pair.chatRoom.lastMessage {
-                        // 6
                         InboxListCell(
                             otherChatRoomMember: pair.user,
                             lastMessage: lastMessage
@@ -49,5 +47,45 @@ struct InboxView: View {
                 }
             }
         }
+        .onAppear(perform: getChatRoomsAndUsers)
+    }
+    func getChatRoomsAndUsers() {
+        Amplify.Publisher.create(
+            Amplify.DataStore.observeQuery(
+                for: ChatRoom.self,
+                where: ChatRoom.keys.memberIds.contains(userState.userId)
+            )
+        )
+        .map(\.items)
+        .flatMap({ chatRooms -> AnyPublisher<(chatRooms: [ChatRoom], users: [User]), Error> in
+            let ids: [String] = chatRooms.map {
+                $0.otherMemberId(currentUser: userState.userId)
+            }
+            
+            let predicates: [QueryPredicate] = ids.map {
+                User.keys.id == $0
+            }
+            
+            let predicateGroup = QueryPredicateGroup(type: .or, predicates: predicates)
+            
+            return Amplify.Publisher.create {
+                try await Amplify.DataStore.query(User.self, where: predicateGroup)
+            }
+            .map { (chatRooms, $0) }
+            .eraseToAnyPublisher()
+        })
+        .receive(on: DispatchQueue.main)
+        .sink(
+            receiveCompletion:  { completion in
+                if case .failure(let error) = completion {
+                    print(error)
+                }
+            },
+            receiveValue: { results in
+                self.chatRooms = results.chatRooms
+                self.users = results.users
+            }
+        )
+        .store(in: &tokens)
     }
 }

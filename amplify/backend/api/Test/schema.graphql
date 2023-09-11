@@ -3,6 +3,7 @@ type Message @model @auth(rules: [{allow: public}]) {
   body: String!
   dateTime: AWSDateTime!
   Sender: User @hasOne
+  chatroomID: ID! @index(name: "byChatRoom")
 }
 
 type LastMessage {
@@ -15,7 +16,7 @@ type ChatRoom @model @auth(rules: [{allow: public}]) {
   id: ID!
   memberIds: [ID!]
   lastMessage: LastMessage
-  Messages: Message @hasOne
+  Messages: [Message] @hasMany(indexName: "byChatRoom", fields: ["id"])
 }
 
 type Product @model @auth(rules: [{allow: public}]) {

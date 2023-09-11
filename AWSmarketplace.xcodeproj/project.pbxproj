@@ -22,6 +22,7 @@
 		4A12411B2AAB650F00EEDCEF /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12411A2AAB650F00EEDCEF /* AvatarView.swift */; };
 		4A12411D2AAB690400EEDCEF /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12411C2AAB690400EEDCEF /* UserProfileView.swift */; };
 		4A12411F2AAB6D8400EEDCEF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A12411E2AAB6D8400EEDCEF /* MainTabView.swift */; };
+		4A57499B2AAFCFF80077BC65 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A57499A2AAFCFF80077BC65 /* AWSAPIPlugin */; };
 		4A5C84632AA963700012F541 /* AWSmarketplaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84622AA963700012F541 /* AWSmarketplaceApp.swift */; };
 		4A5C84652AA963700012F541 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C84642AA963700012F541 /* ContentView.swift */; };
 		4A5C84672AA963710012F541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5C84662AA963710012F541 /* Assets.xcassets */; };
@@ -105,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A57499B2AAFCFF80077BC65 /* AWSAPIPlugin in Frameworks */,
 				4A00F0012AAC2DBE00C81A26 /* AWSS3StoragePlugin in Frameworks */,
 				4AF57E1D2AAACBC4004CF0F3 /* AWSDataStorePlugin in Frameworks */,
 				4A1241192AAB64C500EEDCEF /* AmplifyImage in Frameworks */,
@@ -234,6 +236,7 @@
 				4AF57E1C2AAACBC4004CF0F3 /* AWSDataStorePlugin */,
 				4A1241182AAB64C500EEDCEF /* AmplifyImage */,
 				4A00F0002AAC2DBE00C81A26 /* AWSS3StoragePlugin */,
+				4A57499A2AAFCFF80077BC65 /* AWSAPIPlugin */,
 			);
 			productName = AWSmarketplace;
 			productReference = 4A5C845F2AA963700012F541 /* AWSmarketplace.app */;
@@ -564,6 +567,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A1241172AAB64C500EEDCEF /* XCRemoteSwiftPackageReference "amplifyimage" */;
 			productName = AmplifyImage;
+		};
+		4A57499A2AAFCFF80077BC65 /* AWSAPIPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A5C84702AA968D60012F541 /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSAPIPlugin;
 		};
 		4A5C84712AA968D60012F541 /* AWSCognitoAuthPlugin */ = {
 			isa = XCSwiftPackageProductDependency;

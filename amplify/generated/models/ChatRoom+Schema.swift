@@ -11,7 +11,6 @@ extension ChatRoom {
     case Messages
     case createdAt
     case updatedAt
-    case chatRoomMessagesId
   }
   
   public static let keys = CodingKeys.self
@@ -35,10 +34,9 @@ extension ChatRoom {
       .field(chatRoom.id, is: .required, ofType: .string),
       .field(chatRoom.memberIds, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .field(chatRoom.lastMessage, is: .optional, ofType: .embedded(type: LastMessage.self)),
-      .hasOne(chatRoom.Messages, is: .optional, ofType: Message.self, associatedWith: Message.keys.id, targetNames: ["chatRoomMessagesId"]),
+      .hasMany(chatRoom.Messages, is: .optional, ofType: Message.self, associatedWith: Message.keys.chatroomID),
       .field(chatRoom.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
-      .field(chatRoom.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime),
-      .field(chatRoom.chatRoomMessagesId, is: .optional, ofType: .string)
+      .field(chatRoom.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )
     }
 }

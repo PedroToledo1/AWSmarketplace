@@ -64,13 +64,7 @@ struct ProductDetailsView: View {
                 User.self,
                 byId: chatRoom.otherMemberId(currentUser: userState.userId)
             ) else {return}
-                navigationCoordinator.routes.append(
-                    .chat(
-                        chatRoom: chatRoom,
-                        otherUsersName: otherUser,
-                        productId: product.id
-                    )
-                )
+            navigationCoordinator.routes.append(.chat(chatRoom: chatRoom, otherUser: otherUser, productId: product.id))
         } catch {
             print(error)
         }

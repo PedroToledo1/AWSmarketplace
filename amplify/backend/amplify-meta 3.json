@@ -36,12 +36,12 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2023-09-11T00:53:33.107Z",
+      "lastPushTimeStamp": "2023-09-11T01:20:42.839Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-test-staging-53439-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiTest"
       },
-      "lastPushDirHash": "7lY4g3oZbq7cHPNObnyjBeaK0tg="
+      "lastPushDirHash": "/go/iDKold74U2HQwgh3kWLIHeU="
     }
   },
   "auth": {
@@ -80,7 +80,7 @@
         "IdentityPoolName": "testAuthIdentityPool__staging",
         "UserPoolName": "Test"
       },
-      "lastPushTimeStamp": "2023-09-11T00:53:33.109Z",
+      "lastPushTimeStamp": "2023-09-11T01:20:42.841Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-test-staging-53439-deployment/amplify-cfn-templates/auth/Test-cloudformation-template.json",
         "logicalId": "authTest"
@@ -96,7 +96,7 @@
         "BucketName": "test-storage-f84bd6a053439-staging",
         "Region": "sa-east-1"
       },
-      "lastPushTimeStamp": "2023-09-11T00:53:36.529Z",
+      "lastPushTimeStamp": "2023-09-11T01:20:46.050Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-test-staging-53439-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storages3teststoragef84bd6a0"
