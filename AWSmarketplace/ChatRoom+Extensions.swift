@@ -19,7 +19,6 @@ extension ChatRoom: Hashable {
         hasher.combine(memberIds)
     }
 }
-// 3
 extension ChatRoom {
     func otherMemberId(currentUser id: String) -> String {
         let otherMemberId = self.memberIds?.first {

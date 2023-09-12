@@ -8,10 +8,8 @@
 import SwiftUI
 struct MessageListCell: View {
     @EnvironmentObject var userState: UserState
-    // 1
     let message: Message
     let sender: User
-    // 2
     var senderAvatarKey: String {
         sender.id + ".jpg"
     }
@@ -23,7 +21,6 @@ struct MessageListCell: View {
     }
     
     var body: some View {
-        // 3
         HStack {
             AvatarView(state: .remote(avatarKey: senderAvatarKey))
                 .frame(width: 30)
