@@ -44,7 +44,9 @@ struct LoginView: View {
                 SignUpView(showLogin: { shouldShowSignUp = false })
                     .navigationBarBackButtonHidden(true)
             }
+            .navigationTitle("Sign In")
         }
+        
     }
 
     func login() async {

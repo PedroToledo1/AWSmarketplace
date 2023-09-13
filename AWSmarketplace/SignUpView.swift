@@ -46,10 +46,12 @@ import Amplify
                 Spacer()
                 Button("Already have an account? Login.", action: showLogin)
             }
+            .navigationTitle("Sign Up")
             .padding()
             .navigationDestination(isPresented: .constant(shouldShowConfirmSignUp)) {
                 ConfirmSignUp(username: username)
             }
+            
         }
         func signUp() async {
             let options = AuthSignUpRequest.Options(
