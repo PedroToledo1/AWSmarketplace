@@ -21,14 +21,24 @@ import Amplify
             VStack {
                 Spacer()
                 TextField("Username", text: $username)
+                    .frame(height: 30)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(10)
                 TextField("Email", text: $email)
+                    .frame(height: 30)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(10)
                 SecureField("Password", text: $password)
+                    .frame(height: 30)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(10)
                 Button("Sign Up", action: {
                     Task{ await signUp() }
                 })
                 Spacer()
                 Button("Already have an account? Login.", action: showLogin)
             }
+            .padding()
             .navigationDestination(isPresented: .constant(shouldShowConfirmSignUp)) {
                 ConfirmSignUp(username: username)
             }

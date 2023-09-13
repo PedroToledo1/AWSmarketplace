@@ -18,11 +18,21 @@ struct LoginView: View {
             VStack {
                 Spacer()
                 TextField("Username", text: $username)
+                    .frame(height: 30)
+                    .background(Color.gray.opacity(0.4))
+                    .cornerRadius(10)
+
                 SecureField("Password", text: $password)
+                    .frame(height: 30)
+                    .background(Color.gray.opacity(0.4))
+                    .cornerRadius(10)
+
+
                 Button("Log In", action: { Task{ await login() }})
                 Spacer()
                 Button("Don't have an account? Sign up.", action: { shouldShowSignUp = true })
             }
+            .padding()
             .navigationDestination(isPresented: $shouldShowSignUp) {
                 SignUpView(showLogin: { shouldShowSignUp = false })
                     .navigationBarBackButtonHidden(true)
