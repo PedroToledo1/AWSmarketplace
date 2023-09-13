@@ -20,21 +20,29 @@ import Amplify
         var body: some View {
             VStack {
                 Spacer()
-                TextField("Username", text: $username)
-                    .frame(height: 30)
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(10)
+               
+                    TextField("Username", text: $username)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
+                
                 TextField("Email", text: $email)
-                    .frame(height: 30)
+                    .padding()
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
                 SecureField("Password", text: $password)
-                    .frame(height: 30)
+                    .padding()
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
                 Button("Sign Up", action: {
                     Task{ await signUp() }
                 })
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .cornerRadius(10)
                 Spacer()
                 Button("Already have an account? Login.", action: showLogin)
             }
